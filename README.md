@@ -7,6 +7,6 @@ Structure:
    (obtained validation accuracy - 88%)
 3. Android application project (Kotlin) : https://yadi.sk/d/maOCjg0MQwX-eA
 4. ImageClassifierActivity.kt : "cat" probability estimation of chosen image from application's gallery
-5. Classifier.kt : classification function = image scaling + prediction
+5. Classifier.kt : image scaling + prediction
 6. TF-Lite converted model : https://yadi.sk/d/ADKNEMXnef0o5A
 7. Android application for model infering: results representation (test set images recognition)
