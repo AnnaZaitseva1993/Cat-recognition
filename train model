@@ -135,9 +135,10 @@ validation_generator = validation_datagen.flow_from_dataframe(
 
 # Fit Model
 
+epochs=50
 history = model.fit_generator(
     train_generator, 
-    epochs=50,
+    epochs=epochs,
     validation_data=validation_generator,
     validation_steps=total_validate//batch_size,
     steps_per_epoch=total_train//batch_size,
