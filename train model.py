@@ -20,7 +20,7 @@ IMAGE_CHANNELS=3
 
 # Prepare Traning Data
 
-filenames = os.listdir("../input/cats-vs-noncats1/Train2/Train2")
+filenames = os.listdir("../input/cats-vs-noncats/Train")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0]
@@ -109,7 +109,7 @@ train_datagen = ImageDataGenerator(rescale=1./255)
 
 train_generator = train_datagen.flow_from_dataframe(
     train_df, 
-    "../input/cats-vs-noncats1/Train2/Train2/", 
+    "../input/cats-vs-noncats/Train", 
     x_col='filename',
     y_col='category',
     target_size=IMAGE_SIZE,
@@ -124,7 +124,7 @@ train_generator = train_datagen.flow_from_dataframe(
 validation_datagen = ImageDataGenerator(rescale=1./255)
 validation_generator = validation_datagen.flow_from_dataframe(
     validate_df, 
-    "../input/cats-vs-noncats1/Train2/Train2/", 
+    "../input/cats-vs-noncats/Train", 
     x_col='filename',
     y_col='category',
     target_size=IMAGE_SIZE,
@@ -165,7 +165,7 @@ plt.show()
 
 # Prepare Testing Data
 
-test_filenames = os.listdir("../input/cats-vs-noncats1/Test2/Test2/")
+test_filenames = os.listdir("../input/cats-vs-noncats/Test")
 test_df1 = pd.DataFrame({
     'filename': test_filenames,
     'non-cat_prob':np.zeros(len(test_filenames)),
@@ -183,7 +183,7 @@ test_df1.head()
 test_gen = ImageDataGenerator(rescale=1./255)
 test_generator = test_gen.flow_from_dataframe(
     test_df1, 
-    "../input/cats-vs-noncats1/Test2/Test2/", 
+    "../input/cats-vs-noncats/Test", 
     x_col='filename',
     y_col=None,
     class_mode=None,
